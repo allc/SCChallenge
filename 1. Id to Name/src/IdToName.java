@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class Challenge {
+public class IdToName {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
