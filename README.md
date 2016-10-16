@@ -1,5 +1,4 @@
 # SCChallenge
----
 
 This repository is for hosting my work for COMP1202 Space Cadets Challenges.
 
