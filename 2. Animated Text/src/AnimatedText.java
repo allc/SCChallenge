@@ -1,7 +1,6 @@
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -86,7 +85,7 @@ public class AnimatedText extends Applet implements ActionListener {
 	}
 	
 	public void paint(Graphics g) {
-		g.clearRect(0, 30, width, height - 30);
+		g.clearRect(0, 25, width, height - 25);
 		g.drawString(text, textX, textY);
 	}
 	
