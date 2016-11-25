@@ -68,6 +68,19 @@ public class ImageProcess {
 	}
 	
 	/**
+	 * Output greyscaled image as JPEG file to given path and file name
+	 * @param outPath path and file name of the output file
+	 * @throws IOException
+	 */
+	public void greyscale(String outPath) throws IOException {
+		BufferedImage grayImg = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
+		Graphics graphics = grayImg.getGraphics();
+		graphics.drawImage(img, 0, 0, null);
+		graphics.dispose();
+		ImageIO.write(grayImg, "jpg", new File(outPath));
+	}
+	
+	/**
 	 * Returns array of RGB values for the input image.
 	 * @return array of RGB values for the input image
 	 */
@@ -159,21 +172,14 @@ public class ImageProcess {
 		
 		long startTime = System.currentTimeMillis(); // running time measure
 		
-		ImageProcess cd = new ImageProcess("/Users/Allen/Documents/3.jpg");
+		ImageProcess cd = new ImageProcess("/Users/Allen/Documents/1.jpg");
 		
 		cd.averageBlur("/Users/Allen/Documents/blurImg.jpg");
-		
 		// running time measure
 		long endTime   = System.currentTimeMillis();
 		System.out.println((endTime - startTime) / 1000.0);
 		
-//		/** greyscale image **/
-//		BufferedImage grayImg;
-//		grayImg = new BufferedImage(imgWidth, imgHeight, BufferedImage.TYPE_BYTE_GRAY);
-//		Graphics graphics = grayImg.getGraphics();
-//		graphics.drawImage(img, 0, 0, null);
-//		graphics.dispose();
-//		ImageIO.write(grayImg, "jpg", new File("/Users/Allen/Documents/grayCircles.jpg"));
+		cd.greyscale("/Users/Allen/Documents/greyscaleImg.jpg");
 	}
 	
 }
