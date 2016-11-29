@@ -33,8 +33,9 @@ public class EdgeDetector {
 		this(ImageIO.read(new File(imgPath)));
 	}
 	
-	public BufferedImage edgeDetect() {
-		BufferedImage edges = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
+	public boolean[][] edgeDetect() {
+		//BufferedImage edges = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_GRAY);
+		boolean[][] edges = new boolean[width][height];
 		
 		int[] verticalMask = {
 				-1, 0, 1,
@@ -73,15 +74,18 @@ public class EdgeDetector {
 				}
 			}
 		}
-		int th = 150; // 150 bingmayong
+		int th = 150;
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
+				edges[i][j] = gradientScale[i][j] > th;
+				/*
 				if (gradientScale[i][j] > th) {
-					edges.setRGB(i, j, new Color(255, 255, 255).getRGB());
+					//edges.setRGB(i, j, new Color(255, 255, 255).getRGB());
 					//System.out.print("++");
 				} else {
 					//System.out.print("  ");
 				}
+				*/
 				System.out.print(gradientScale[i][j] + " ");
 			}
 			System.out.println();
