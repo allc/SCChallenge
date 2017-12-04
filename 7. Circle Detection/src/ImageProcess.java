@@ -15,7 +15,7 @@ public class ImageProcess {
 	 * @return average blur <code>BufferedImage</code>
 	 */
 	/*
-	 * This implement ignores the edge
+	 * This implement ignores the edges
 	 */
 	public static BufferedImage averageBlur(BufferedImage img) {
 		int[][] separateRGB = ImageTool.getSeparateImgRGB(img);

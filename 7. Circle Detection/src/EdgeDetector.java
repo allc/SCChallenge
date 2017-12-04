@@ -74,7 +74,7 @@ public class EdgeDetector {
 				}
 			}
 		}
-		int th = 150;
+		int th = 100;
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				edges[i][j] = gradientScale[i][j] > th;

@@ -17,7 +17,7 @@ public class CircleDetector {
 		int centerY = 0;
 		int circleRadius = 10;
 		int[][][] accumulator = new int[width][height][300];
-		for (int r = 10; r < 300; r++) {
+		for (int r = 10; r < 100; r++) {
 			for (int i = 0; i < width; i++) {
 				for (int j = 0; j < height; j++) {
 					if (edges[i][j]) {

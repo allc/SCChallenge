@@ -2,13 +2,13 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class Main {
+public class CircleDetectorMain {
 
 	public static void main(String[] args) throws IOException {
 		long time1 = System.currentTimeMillis();
 		
-		BufferedImage img8 = ImageFileTool.getBufferedImage("/Users/Allen/Documents/SampleImages/clock2.jpg");
-		img8 = ImageProcess.averageBlur(img8);
+		BufferedImage img = ImageFileTool.getBufferedImage("/Users/Allen/Documents/SampleImages/hhh2.jpg");
+		BufferedImage img8 = ImageProcess.averageBlur(img);
 		
 		long time2 = System.currentTimeMillis();
 		
@@ -36,9 +36,9 @@ public class Main {
 			double thetaRadius = theta * Math.PI / 180;
 			int x = (int) (circle[0] + circle[2] * Math.sin(thetaRadius));
 			int y = (int) (circle[1] - circle[2] * Math.cos(thetaRadius));
-			img8.setRGB(x, y, new Color(255, 0, 0).getRGB());
+			img.setRGB(x, y, new Color(0, 255, 0).getRGB());
 		}
-		ImageFileTool.saveImageFile(img8, "/Users/Allen/Documents/SampleImages/circle.jpg");
+		ImageFileTool.saveImageFile(img, "/Users/Allen/Documents/SampleImages/circle.jpg");
 		
 		System.out.println("circleDetect time: " + (time4 - time3) / 1000);
 		
